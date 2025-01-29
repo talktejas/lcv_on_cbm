@@ -43,7 +43,7 @@ app_license = "mit"
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-doctype_js = {"Landed Cost Voucher" : "public/js/landed-voucher-cost.js"}
+# doctype_js = {"Landed Cost Voucher" : "public/js/landed-voucher-cost.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
@@ -83,7 +83,7 @@ doctype_js = {"Landed Cost Voucher" : "public/js/landed-voucher-cost.js"}
 # ------------
 
 # before_install = "lcv_on_cbm.install.before_install"
-after_install = "lcv_on_cbm.install.after_install"
+after_migrate = "lcv_on_cbm.install.after_install"
 
 # Uninstallation
 # ------------
@@ -129,9 +129,9 @@ before_uninstall = "lcv_on_cbm.install.before_uninstall"
 # ---------------
 # Override standard doctype classes
 
-# override_doctype_class = {
-# 	"ToDo": "custom_app.overrides.CustomToDo"
-# }
+override_doctype_class = {
+	"Landed Cost Voucher":"lcv_on_cbm.override.landed_cost_voucher.OverrideLandedCostVoucher"
+}
 
 # Document Events
 # ---------------

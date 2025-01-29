@@ -1,9 +1,14 @@
 import frappe
-from lcv_on_cbm.custom_fields.custom_fields import CUSTOM_FIELDS
+from lcv_on_cbm.custom_fields_property_setter.custom_fields import CUSTOM_FIELDS
+from lcv_on_cbm.custom_fields_property_setter.property_setter import get_property_setters
 from frappe.custom.doctype.custom_field.custom_field import create_custom_fields
-
+from frappe.custom.doctype.property_setter.property_setter import  make_property_setter
 def after_install():
     create_custom_fields(CUSTOM_FIELDS, ignore_validate=True)
+    make_property_setters()
+def make_property_setters():
+    for property_setter in get_property_setters():
+        frappe.make_property_setter(property_setter, validate_fields_for_doctype=False)
 
 def before_uninstall():
     delete_custom_fields(CUSTOM_FIELDS)

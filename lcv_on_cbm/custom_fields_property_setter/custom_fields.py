@@ -200,32 +200,6 @@ CUSTOM_FIELDS={
 			'precision': 5
 		}
 	],
-	'Landed Cost Voucher': [
-		{
-			'label': 'Voucher Type',
-			'fieldname': 'voucher_type',
-			'fieldtype': 'Select',
-			'options': '\nPurchase Invoice\nPurchase Receipt',
-			'insert_after': 'purchase_receipt_items',
-			'in_list_view': 0,
-			'translatable': 1
-		},
-		{
-			'label': 'Voucher Name',
-			'fieldname': 'voucher_name',
-			'fieldtype': 'Dynamic Link',
-			'options': 'voucher_type',
-			'insert_after': 'voucher_type',
-			'in_list_view': 0
-		},
-		{
-			'label': 'Get Items From Purchase Receipts',
-			'fieldname': 'get_data',
-			'fieldtype': 'Button',
-			'insert_after': 'voucher_name',
-			'in_list_view': 0
-		}
-	],
 	'Purchase Invoice': [
 		{
 			'label': 'Do Nos',
